@@ -8,18 +8,21 @@ while (i != 1):
         lista_compras.append(nombre_articulo)
         print(f"El articulo {nombre_articulo} ¡ha sido agregado correctamente!")
     elif(menu == "b") or (menu == "B"):
-        for i, nombre_articulo in enumerate(lista_compras):
-            print(f"{i}. {nombre_articulo}")
-        articulo_eliminar = int(input("Cual es el índice del elemento a eliminar: "))
-        if 0 <= articulo_eliminar < len(lista_compras):
-            eliminar = lista_compras.pop(articulo_eliminar)
-            print(f"El artículo {eliminar} ha sido eliminado de la lista")
-        """del lista_compras[articulo_eliminar]
-        print(f"El artículo {lista_compras[articulo_eliminar]} ha sido eliminado de la lista")
-        """
+        if lista_compras:
+            for i, nombre_articulo in enumerate(lista_compras):
+                print(f"{i}. {nombre_articulo}")   
+                articulo_eliminar = int(input("Cual es el índice del elemento a eliminar: "))
+                if 0 <= articulo_eliminar < len(lista_compras):
+                    eliminar = lista_compras.pop(articulo_eliminar)
+                    print(f"El artículo {eliminar} ha sido eliminado de la lista")
+        else:
+            print("No hay artículos para eliminar")
     elif(menu == "c") or (menu == "C"):
-        for i, nombre_articulo in enumerate(lista_compras):
-            print(f"{i}. {nombre_articulo}")
+        if lista_compras:
+            for i, nombre_articulo in enumerate(lista_compras):
+                print(f"{i}. {nombre_articulo}")
+        else:
+            print("Lista vacía")
     elif(menu == "d") or (menu == "D"):
         print("Proceso terminado Hasta luego")
         i = 1
